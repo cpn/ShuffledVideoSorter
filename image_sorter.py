@@ -47,14 +47,17 @@ class ImageSorter:
         list_of_masks = CNN.apply_model(list_of_images)
         return list_of_masks
 
-    def substract_background(self, list_of_images):
+    def substract_background(self, list_of_images, background_sub_iterations = 5):
         backSub = cv.createBackgroundSubtractorMOG2()
-        list_of_masks = []
+        list_of_edited_images = []
+        for i in range(background_sub_iterations):
+            for frame in list_of_images:
+                _ = backSub.apply(frame)
         for frame in list_of_images:
-            _ = backSub.apply(frame)
-        for frame in list_of_images:
-            list_of_masks.append(backSub.apply(frame))
-        return list_of_masks
+            mask = backSub.apply(frame)
+            new_frame = cv.bitwise_and(frame, frame, mask=mask)
+            list_of_edited_images.append(new_frame)
+        return list_of_edited_images
 
     def sort(self, type_of_metric = "L2"):
         if(type_of_metric == "L2"):

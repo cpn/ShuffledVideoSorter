@@ -15,8 +15,6 @@ class CNNModel:
         list_of_images = np.array(list_of_images)
         list_of_images = tf.cast(list_of_images, tf.float32)
         list_of_images = (list_of_images / 127.5) - 1
-        list_of_images = np.expand_dims(list_of_images, axis = 3)
-        list_of_images = np.concatenate([list_of_images, list_of_images, list_of_images], axis = 3)
         return list_of_images
 
     def apply_model(self, list_of_images):
