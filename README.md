@@ -7,5 +7,5 @@ To run the pipeline run main.py with two arguments "input folder" and "output fo
 
 The first 10 sorted images given by the pipeline:
 
-![](sorted_images/image_0.jpg)
+![](sorted_images/image_0.jpg sorted_images/image_0.jpg)
 ![](sorted_images/image_0.jpg)
