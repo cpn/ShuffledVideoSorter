@@ -1,0 +1,4 @@
+venv/
+sorted_images/
+.idea/
+__pycache__/
