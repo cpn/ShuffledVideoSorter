@@ -13,5 +13,12 @@ The first 12 sorted images given by the pipeline:
   <img src="sorted_images/image_2.jpg" width="250" />
   <img src="sorted_images/image_3.jpg" width="250" />
   <img src="sorted_images/image_4.jpg" width="250" />
+  <img src="sorted_images/image_5.jpg" width="250" />
+  <img src="sorted_images/image_6.jpg" width="250" /> 
+  <img src="sorted_images/image_7.jpg" width="250" />
+  <img src="sorted_images/image_8.jpg" width="250" />
+  <img src="sorted_images/image_9.jpg" width="250" />
+  <img src="sorted_images/image_10.jpg" width="250" />
+  <img src="sorted_images/image_11.jpg" width="250" />
 </p>
 
