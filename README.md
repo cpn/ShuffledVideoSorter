@@ -5,17 +5,13 @@ The flow of the project is quite simple: read the images, apply background subst
 
 To run the pipeline run main.py with two arguments "input folder" and "output folder".
 
-The first 11 sorted images given by the pipeline:
+The first 10 sorted images given by the pipeline:
 
-<img src="sorted_images/image_0.jpg" width="100">
+<p float="left">
+  <img src="sorted_images/image_0.jpg" width="500" />
+  <img src="sorted_images/image_1.jpg" width="500" /> 
+  <img src="sorted_images/image_2.jpg" width="500" />
+  <img src="sorted_images/image_3.jpg" width="500" />
+  <img src="sorted_images/image_4.jpg" width="500" />
+</p>
 
-![](sorted_images/image_1.jpg)
-![](sorted_images/image_2.jpg)
-![](sorted_images/image_3.jpg)
-![](sorted_images/image_4.jpg)
-![](sorted_images/image_5.jpg)
-![](sorted_images/image_6.jpg)
-![](sorted_images/image_7.jpg)
-![](sorted_images/image_8.jpg)
-![](sorted_images/image_9.jpg)
-![](sorted_images/image_10.jpg)
