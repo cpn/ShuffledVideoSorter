@@ -8,10 +8,10 @@ To run the pipeline run main.py with two arguments "input folder" and "output fo
 The first 12 sorted images given by the pipeline:
 
 <p float="left">
-  <img src="sorted_images/image_0.jpg" width="300" />
-  <img src="sorted_images/image_1.jpg" width="300" /> 
-  <img src="sorted_images/image_2.jpg" width="300" />
-  <img src="sorted_images/image_3.jpg" width="300" />
-  <img src="sorted_images/image_4.jpg" width="300" />
+  <img src="sorted_images/image_0.jpg" width="250" />
+  <img src="sorted_images/image_1.jpg" width="250" /> 
+  <img src="sorted_images/image_2.jpg" width="250" />
+  <img src="sorted_images/image_3.jpg" width="250" />
+  <img src="sorted_images/image_4.jpg" width="250" />
 </p>
 
