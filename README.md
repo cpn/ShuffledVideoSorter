@@ -1,13 +1,13 @@
 # ShuffledVideoSorter
-Given a folder of shuffled images from a video this project attempts to reorder them using deep learning.
+This project attempts to reorder a set of images from a shuffled video using deep learning.
 
-The flow of the project is quite simple: read the images, apply background substraction, apply an already trained CNN to obtain the feature map, select the first image and find the next one using the L2 distance (or cosine) with respect to the feature map, do the same until you run out of images.
+The flow of the project is quite simple: read the images, apply background substraction, apply an already trained CNN to obtain the feature map, select the first image and find the next one using the L2 distance (or cosine) with respect to the feature map, do the same until you run out of images. This way you obtain two parts of the video, possible in reverse, which can be reordered manually. The feature map was obtained using the pre-trained MobileNetV2 architecture: https://arxiv.org/abs/1801.04381 .
 
 To run the pipeline run main.py with two arguments "input folder" and "output folder".
 
 The first 11 sorted images given by the pipeline:
 
-![](sorted_images/image_0.jpg)
+<img src="images=sorted_images/image_0.jpg" width="100" height="100">
 ![](sorted_images/image_1.jpg)
 ![](sorted_images/image_2.jpg)
 ![](sorted_images/image_3.jpg)
