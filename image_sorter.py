@@ -19,6 +19,10 @@ class ImageSorter:
         if not os.path.isdir(output_path):
             os.mkdir(output_path)
 
+        # For speed optimization, all algorithms are defined here
+        self.backSub = cv.createBackgroundSubtractorMOG2()
+        self.CNN = CNNModel()
+
     def read_images(self):
         data_path = self.input_path + "/*"
         files = glob.glob(data_path)
@@ -43,18 +47,16 @@ class ImageSorter:
         return distance
 
     def apply_CNN(self, list_of_images):
-        CNN = CNNModel()
-        list_of_masks = CNN.apply_model(list_of_images)
+        list_of_masks = self.CNN.apply_model(list_of_images)
         return list_of_masks
 
     def substract_background(self, list_of_images, background_sub_iterations = 5):
-        backSub = cv.createBackgroundSubtractorMOG2()
         list_of_edited_images = []
         for i in range(background_sub_iterations):
             for frame in list_of_images:
-                _ = backSub.apply(frame)
+                _ = self.backSub.apply(frame)
         for frame in list_of_images:
-            mask = backSub.apply(frame)
+            mask = self.backSub.apply(frame)
             new_frame = cv.bitwise_and(frame, frame, mask=mask)
             list_of_edited_images.append(new_frame)
         return list_of_edited_images
@@ -73,7 +75,7 @@ class ImageSorter:
         list_of_images = list(zip(images_to_save, list_of_images))
         main_image = list_of_images.pop()
         image_index = 0
-        image_name = self.output_path + "/image_{}.jpg".format(image_index)
+        image_name = os.path.join(self.output_path, f"image_{image_index}.jpg")
         pyplot.imsave(image_name, main_image[0])
         while(list_of_images):
             current_image = list_of_images[0]
@@ -87,6 +89,5 @@ class ImageSorter:
                     closest_image_index = index
             main_image = list_of_images.pop(closest_image_index)
             image_index = image_index + 1
-            image_name = self.output_path + "/image_{}.jpg".format(image_index)
+            image_name = os.path.join(self.output_path, f"image_{image_index}.jpg")
             pyplot.imsave(image_name, main_image[0])
-
